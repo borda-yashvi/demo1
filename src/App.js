@@ -13,9 +13,9 @@ const App =()=>{
  return(
   <>
   <div>
-//     <BrowserRouter>
-//     <NoteState>
-//       <Routes>
+    <BrowserRouter>
+    <NoteState>
+      <Routes>
       {/* <Switch> */}
         <Route path="/Home" element={<Home />}/>
         <Route path="/" element={<Navbar/>}/>
@@ -31,9 +31,9 @@ const App =()=>{
           <Route>
 
           </Route>*/
-//       </Routes> 
-//     </NoteState>
-//     </BrowserRouter>
+      </Routes> 
+    </NoteState>
+    </BrowserRouter>
   </div>
   </>
  )
