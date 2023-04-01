@@ -20,8 +20,10 @@ const Accordion=(props)=>{
       else{
         setStyle({
             color:'white',
-            backgroundColor:'black'
-          
+            backgroundColor:'black',
+            borderStyle:"solid",
+            borderColor:"black",
+            borderWidth:"200px"
         })
         setBtn("enable light mode")
       }
