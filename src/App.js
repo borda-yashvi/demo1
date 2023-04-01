@@ -1,4 +1,4 @@
-import {Routes,Route,BrowserRouter} from 'react-router-dom'
+// import {Routes,Route,BrowserRouter} from 'react-router-dom'
 // import {Switch} from "react-router"
 import React from 'react'
 import NoteState from './context/NoteState'
@@ -13,9 +13,9 @@ const App =()=>{
  return(
   <>
   <div>
-    <BrowserRouter>
-    <NoteState>
-      <Routes>
+//     <BrowserRouter>
+//     <NoteState>
+//       <Routes>
       {/* <Switch> */}
         <Route path="/Home" element={<Home />}/>
         <Route path="/" element={<Navbar/>}/>
@@ -24,16 +24,16 @@ const App =()=>{
         <Route path="NoteContext" element={<NoteContext/>}/>
         <Route path="Accordion" element={<Accordion/>}/>
         {/* </Switch> */}
-    {/* <Route exact path="/">
+    /* <Route exact path="/">
       <Home />
         </Route>
 
           <Route>
 
-          </Route>*/}
-      </Routes> 
-    </NoteState>
-    </BrowserRouter>
+          </Route>*/
+//       </Routes> 
+//     </NoteState>
+//     </BrowserRouter>
   </div>
   </>
  )
