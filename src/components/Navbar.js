@@ -8,7 +8,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
 import Img from "./img/9.ico"
-import {Link} from "react-router-dom"
+// import {Link} from "react-router-dom"
 import {Image} from "react-bootstrap"
 import React from 'react';
 import "./Navbar.css"
@@ -82,7 +82,7 @@ const Navigate=useNavigate
       
        <nav className={`navbar navbar-expand-lg navbar-${props.mod} bg-${props.mod}`}>
            <Image src={Img} id="icon"/>
-           <Link className="navbar-brand" href="#">Navbar</Link>
+           <a className="navbar-brand" href="#">Navbar</a>
            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
              <span className="navbar-toggler-icon"></span>
            </button>
