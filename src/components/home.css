@@ -1,0 +1,46 @@
+.up{
+    background-color: rgb(36, 36, 105);
+    color: aliceblue;
+    padding-left: 200px;
+    padding-top: 20px;
+}
+.btnu{
+    background-color: rgb(36, 36, 105);
+    border-radius: 200px;
+    padding: 20px;
+    margin-right: 20px;
+}
+.btnu:hover{
+    border:rgb(201, 60, 60);
+    border-width: 20px;
+    border:transparent
+}
+/* .btno{
+    margin-left: 100px;
+} */
+
+.second{
+ background-color: rgb(197, 197, 184);
+}
+
+.md{
+    margin-left: 300px;
+    margin-top: -200px;
+    background-color: rgb(162, 165, 189);
+}
+.input-group-append {
+    cursor: pointer;
+}
+.card-body{
+    box-shadow: 1px 10px 90px 10px rgb(68, 68, 70);
+    /* -10px 10px 10px rgb(225, 226, 236),
+    10px 10px 10px rgb(225, 226, 236),
+    -10px 10px 10px rgb(225, 226, 236); */
+}
+.card-body:hover{
+    box-shadow: 1px 10px 90px 10px rgb(6, 8, 39);
+    /* -10px 10px 10px rgb(225, 226, 236),
+    10px 10px 10px rgb(225, 226, 236),
+    -10px 10px 10px rgb(225, 226, 236); */
+    border-radius: 20px 20px  20px 20px;
+}
