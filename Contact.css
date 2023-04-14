@@ -1,0 +1,65 @@
+#edit{
+    border-width:1px;
+    border-color: blue;
+    border-style:solid;
+    background-color: rgb(191, 212, 240);
+    margin-top:30px;
+    margin-left:925px;
+    width: 150px;
+}
+
+.conatiner{
+    /* background-image: url("./img/3.png"); */
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+
+.section{
+    background-image: url("./img/b4.jpg");
+       background-size: 1700px;
+       background-repeat: no-repeat;
+       height: 700px;
+}
+
+#login{
+    margin-left: 500px;
+    margin-right: 500px;
+    padding: 10px 10px 10px 10px;
+    /* background-image: url("./img/3.png"); */
+    background-size:900px;
+    width: 830px;
+    height:2300px;
+    background-repeat:no-repeat;
+    border-radius: 20px;
+    
+}
+#join{
+    background-image:linear-gradient(rgb(165, 186, 223),rgb(21, 31, 61));
+    background-repeat:no-repeat;
+    background-size:2000px;
+    margin-bottom: 20px;
+    padding-bottom: 70px;
+    padding-top: 70px;
+}
+
+#si{
+    background-color: rgb(203, 231, 231);
+    
+}
+#cover{
+    height:600px;
+}
+
+.limg{
+    background-image: url("./img/b3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#just{
+    background-color: rgb(138, 181, 216);
+    margin-left: 10px;
+    padding-left: 400px;
+    /* padding-bottom: 15px; */
+}
