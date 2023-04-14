@@ -1,5 +1,7 @@
-import React,{useState} from "react"
-import Navbar from "./Navbar"
+// import React,{useState} from "react"
+// import Navbar from "./Navbar"
+// import {Alert} from "react-bootstrap"
+// import 'bootstrap/dist/css/bootstrap.min.css';  
 
 // import NoteContext from "../context/NoteContext"
 // import Data from "./data"
@@ -42,8 +44,34 @@ import Navbar from "./Navbar"
 //     )
 // } */
 
+import React,{useState,useEffect} from "react"
+import Navbar from "./Navbar"
+import Alert from "./Alert"
+import 'bootstrap/dist/css/bootstrap.min.css';  
+import  { Collapse, Popover, Toast, Tooltip, Modal, Dropdown ,dataDismiss} from  "bootstrap"
+
 const State=(props)=>{
-    const up=()=>{
+    const [text,setText]=useState('enter text')
+    const [alert,setAlerts] = useState(null)
+    const [alertstatus,setAlertstatus] = useState(false)
+
+    const showAlert =(message,type)=>{
+        setAlerts({
+          msg:message,
+          type:type
+        })
+      }
+
+      useEffect(() => {
+        const timeId = setTimeout(() => {
+            showAlert(false)
+        }, 2000)
+        return () => {
+            clearTimeout(timeId)
+          }
+        }, []);
+
+   const up=()=>{
         console.log("upper was clicked"+text);
         setText(text.toUpperCase())
     }
@@ -57,65 +85,55 @@ const State=(props)=>{
     }
     const cp=()=>{
         console.log("copy text");
-        const text=document.getElementById("Box")
-        console.log("=text",text);
-        text.select()
         // text.setSelectionRange(0,9999)
         navigator.clipboard.writeText(text)
-        // textAreaRef.current.select();
-        // e.target.focus();
-        // setText('Copied!');
+        showAlert("copiy to clipboard!","success")
     }
-    const es=(newText)=>{
+    const es=()=>{
         let nt = text.split(/[ ]+/)
         console.log(nt);
+        const newText={text}
         setText(newText.join(" "))
     }
     const on=(event)=>{ 
         console.log("upper was clicked"+text);
         setText(event.target.value)
     }
-    const [text,setText]=useState('enter text')
 
-    const [mod,mode] = useState('light')
-    const toggleMode =()=>{
-      if(mod==="light"){
-            mode('dark')
-            document.body.style.backgroundColor='grey'
-            document.body.style.color='white'
-      }
-      else{
-            mode('light')
-            document.body.style.backgroundColor='white'
-            document.body.style.color='grey'
-      }
-      
-    }
-
-
-  const w= text.split(" ").length
+  
 
     return(<>
-    <Navbar title="TextUtils" mod={mod} toggleMode={toggleMode}/>
+    <Navbar title="TextUtils"/>  {
+        alertstatus&&
+        <Alert alert={alert}/>
+    }
     <div className="container" >
         <h1>{props.heading}</h1>
         <div>
              <textarea className="from-control" value={text} onChange={on} style={{backgroundColor:props.mod==='dark'?'blue':'pink'}} id="Box" cols="10" rows="15"></textarea>
         </div>
-       
-        <br/><button className="btn btn-danger" onClick={up}>conver to upper case</button>
-        <button className="btn btn-warning ms-3" onClick={lw}> conver to lower case</button>
-        <button className="btn btn-success ms-3" onClick={cl}> cls text</button>
-        <button className="btn btn-primary ms-3" onClick={cp}>copy text</button>
-        <button className="btn btn-primary ms-3" onClick={es}>extra space</button>
+        {/* <div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div> */}
+   <br/><button disabled={text.length==0} className="btn btn-danger" onClick={up}>conver to upper case</button>
+        <button disabled={text.length==0} className="btn btn-warning ms-3" onClick={()=>{lw()}}> conver to lower case</button>
+        <button disabled={text.length==0} className="btn btn-success ms-3" onClick={cl}> cls text</button>
+        <button disabled={text.length==0} className="btn btn-primary ms-3" onClick={()=>{
+            cp()
+            setAlertstatus(true)
+        }}>copy text</button>
+        <button disabled={text.length==0} className="btn btn-primary ms-3" onClick={es}>extra space</button>
     </div>
     <div className="container my-lg-3">
-        <h1>text character {text.length} sentense  {w}</h1>
+        <h1>text character {text.split(/\s+/).length} sentense {text.split(/\s+/).filter((e)=>{return e.length!==0}).length}</h1>
         <h1>text read {0.008*text.split(" ").length}</h1>
+        <h1>text read in local{0.008*text.split(" ").filter((element)=>[
+            element.length!=0
+        ])}</h1>
         <h1>Preview</h1>
-        <p>{text}</p>
+        <p>{text.length>0?text:"blank"}</p>
     </div>
-    </>)
+  
+    </>
+    )
 }
-
+ 
 export default State

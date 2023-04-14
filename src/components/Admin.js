@@ -19,7 +19,7 @@ const Admin = () => {
   }, [location]);
   return (
     <>
-      <h1>welcome {localStorage.getItem("user.name")}</h1>
+      <h1>welcome {localStorage.getItem("fname")}</h1>
       <div className="container my-5">
         <div className="row">
           <div className="col-xl-12">
@@ -33,6 +33,8 @@ const Admin = () => {
                   localStorage.removeItem("token");
                   localStorage.removeItem("user");
                   localStorage.removeItem("localStorage");
+                  localStorage.removeItem("fname");
+                  localStorage.removeItem("name")
                   logIn();
                 }}
               >
@@ -42,7 +44,7 @@ const Admin = () => {
             <h1>Admin page</h1>
             <div className="container-fluid pb-5">
               <hr />
-              <div className="card-group mb-3 my-5">
+              <div className="card-group mb-3">
                 <div className="card">
                   <div className="card-body text-center ">
                     <Image src={Img}></Image>
